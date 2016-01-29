@@ -104,7 +104,9 @@ public class Tile
 	 */
 	public boolean matchLeft(Tile tileToLeft)
 	{
-		if(this.sides[3]==tileToLeft.sides[1])
+		int [] newSidesThis = this.getSides();		//Used to check the sides with respect to orientation.
+		int [] newSidesLeft = tileToLeft.getSides();
+		if(newSidesThis[3]==newSidesLeft[1])
 			return true;
 		else
 			return false;
@@ -119,7 +121,9 @@ public class Tile
 	 */
 	public boolean matchTop(Tile tileToTop)
 	{
-		if(this.sides[0]==tileToTop.sides[2])
+		int [] newSidesThis = this.getSides();		//Used to check the sides with respect to orientation.
+		int [] newSidesTop = tileToTop.getSides();
+		if(newSidesThis[0]==newSidesTop[2])
 			return true;
 		else
 			return false;
