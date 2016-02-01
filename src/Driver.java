@@ -31,7 +31,10 @@ public class Driver
 		
 		ArrayDeque <Tile> queue = makeQueue(b.tiles);
 		solveIt(0, queue, b);
-		b.display();
+		if(foundIt)
+			b.display();
+		else
+			System.out.println("No solution found.");
 	}
 
 	/**
@@ -70,8 +73,7 @@ public class Driver
 							if(foundIt)
 								return;
 						}
-						else
-							current.turn();
+						current.turn();
 					}
 					availible.addLast(current);
 				}
@@ -87,9 +89,7 @@ public class Driver
 								return;
 							
 						}
-						else{
-							current.turn();
-						}
+						current.turn();
 					}
 					availible.addLast(current);
 				}
@@ -101,8 +101,7 @@ public class Driver
 							if(foundIt)
 								return;
 						}
-						else
-							current.turn();
+						current.turn();
 					}
 					availible.addLast(current);
 				}
